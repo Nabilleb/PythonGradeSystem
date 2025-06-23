@@ -14,7 +14,19 @@ def get_name_grades_with_avg(journal):
         avg = sum(grades) / len(grades)
         student_avg_grade[name] = avg
         print(f"Student Name: {name} | Grades: {grades} | Average: {avg:.2f}")
-    print (student_avg_grade)
+    
+    # Print the result of highest average
+    print(highest_avg(student_avg_grade))
+
+# Function to get the student with the highest average
+def highest_avg(avg_dict):
+    max_avg = 0
+    student_name = ""
+    for name, avg in avg_dict.items():
+        if avg > max_avg:
+            max_avg = avg
+            student_name = name
+    return f"Highest average is {student_name} with {max_avg:.2f}"
 
 # Sample list of records
 records = [
@@ -22,8 +34,6 @@ records = [
     ["Ziad", 62], ["Jana", 97], ["Tariq", 73], ["Ziad", 71], ["Layla", 86],
     ["Jana", 94], ["Ziad", 75]
 ]
- 
-
 
 # Create the journal and display the results
 journal = create_class_journal(records)
