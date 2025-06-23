@@ -40,7 +40,7 @@ def highest_avg(avg_dict):
             student_name = name
     return f"Highest average is {student_name} with {max_avg:.2f}"
 
-# Function to find the student with the smallest difference between highest and lowest grades
+# Function to find the most consistent student by smallest difference between highest and lowest grades
 def most_consistent_by_range(journal):
     """
     Finds the student with the smallest grade range (most consistent).
@@ -74,6 +74,16 @@ def total_grades_entered(journal):
     """
     return sum(len(grades) for grades in journal.values())
 
+# Function to calculate the average grade for the entire class
+def class_average(journal):
+    """
+    Returns the average grade across the entire class.
+    """
+    all_grades = [grade for grades in journal.values() for grade in grades]
+    if not all_grades:
+        return 0
+    return sum(all_grades) / len(all_grades)
+
 # Sample list of student records (name and grade)
 records = [
     ["Layla", 89], ["Tariq", 77], ["Layla", 91], ["Jana", 100], ["Tariq", 84],
@@ -84,7 +94,7 @@ records = [
 # Create the class journal from the records
 journal = create_class_journal(records)
 
-# Display student grades, averages, and statistics
+# Display student grades and statistics
 get_name_grades_with_avg(journal)
 
 # Display students who had at least one grade below 70
@@ -93,3 +103,6 @@ print("\nStudents with at least one grade below 70:", below_70_students)
 
 # Display total number of grades entered
 print("Total grades entered across the class:", total_grades_entered(journal))
+
+# Display class average grade
+print(f"Class average grade: {class_average(journal):.2f}")
