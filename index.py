@@ -9,9 +9,12 @@ def create_class_journal(records):
 
 # Function to print each student's name, grades, and their average
 def get_name_grades_with_avg(journal):
+    student_avg_grade = {}
     for name, grades in journal.items():
         avg = sum(grades) / len(grades)
+        student_avg_grade[name] = avg
         print(f"Student Name: {name} | Grades: {grades} | Average: {avg:.2f}")
+    print (student_avg_grade)
 
 # Sample list of records
 records = [
@@ -19,6 +22,8 @@ records = [
     ["Ziad", 62], ["Jana", 97], ["Tariq", 73], ["Ziad", 71], ["Layla", 86],
     ["Jana", 94], ["Ziad", 75]
 ]
+ 
+
 
 # Create the journal and display the results
 journal = create_class_journal(records)
