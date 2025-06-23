@@ -15,8 +15,8 @@ def get_name_grades_with_avg(journal):
         student_avg_grade[name] = avg
         print(f"Student Name: {name} | Grades: {grades} | Average: {avg:.2f}")
     
-    # Print the result of highest average
     print(highest_avg(student_avg_grade))
+    print(most_consistent_by_range(journal))
 
 # Function to get the student with the highest average
 def highest_avg(avg_dict):
@@ -27,6 +27,19 @@ def highest_avg(avg_dict):
             max_avg = avg
             student_name = name
     return f"Highest average is {student_name} with {max_avg:.2f}"
+
+# Function to find the student with smallest range (most consistent)
+def most_consistent_by_range(journal):
+    min_diff = float('inf')
+    consistent_student = ""
+
+    for name, grades in journal.items():
+        grade_range = max(grades) - min(grades)
+        if grade_range < min_diff:
+            min_diff = grade_range
+            consistent_student = name
+
+    return f"Most consistent (by smallest diff) is {consistent_student} with a difference of {min_diff}"
 
 # Sample list of records
 records = [
