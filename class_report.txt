@@ -1,0 +1,12 @@
+=== Student Grades and Averages ===
+Student Name: Layla | Grades: [89, 91, 86] | Average: 88.67
+Student Name: Tariq | Grades: [77, 84, 73] | Average: 78.00
+Student Name: Jana | Grades: [100, 97, 94] | Average: 97.00
+Student Name: Ziad | Grades: [62, 71, 75] | Average: 69.33
+
+Highest average is Jana with 97.00
+Most consistent (by smallest diff) is Layla with a difference of 5
+
+Students with at least one grade below 70: ['Ziad']
+Total grades entered across the class: 12
+Class average grade: 83.25
