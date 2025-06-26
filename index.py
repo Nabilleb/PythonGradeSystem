@@ -1,4 +1,3 @@
-import statistics
 
 # Function to create a class journal from records
 def create_class_journal(records):
@@ -11,7 +10,7 @@ def create_class_journal(records):
 
 # Function to get new data from user input
 def input_more_data():
-    print("\n📥 Enter new student records (type 'done' to stop):")
+    print("\n Enter new student records (type 'done' to stop):")
     new_records = []
     while True:
         name = input("Student name: ")
